@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mcpricer"
+version = "0.1.0"
+description = "Monte Carlo option pricer for European, Asian, barrier, lookback and American options"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = ["numpy>=1.22"]
+
+[project.optional-dependencies]
+test = ["pytest"]
+
+[project.scripts]
+mcpricer = "mcpricer.__main__:main"
+
+[tool.setuptools]
+packages = ["mcpricer"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
